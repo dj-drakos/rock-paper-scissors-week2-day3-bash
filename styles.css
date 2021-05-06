@@ -79,7 +79,7 @@ h1 {
 
 
 input {
-    display: none; 
+    /* display: none;  */
     transition:  all 2000 ease;
 }
 
