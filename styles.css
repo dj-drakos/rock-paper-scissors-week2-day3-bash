@@ -85,7 +85,7 @@ input {
 
 label {
     font-size: 40px;
-    transition: all 1000 ease; 
+    transition: all .5s ease; 
 }
 
 label:hover {
@@ -178,18 +178,20 @@ input:checked + i{
 
 
 
-.message-container #totalGameTimesOutput {
+.message-container #totalResetTimes {
     position: absolute;
-    right: 150px; 
+    right: 350px; 
     top: 25px; 
+    color: rgb(172, 15, 23); 
     font-size: 50px;
 }
 
 .message-container #winPercentagesOutput{
     position: absolute;
-    left: 200px; 
+    left: 300px; 
     top: 25px; 
     font-size: 50px;
+    color: rgb(8, 119, 153); 
 }
 
 
