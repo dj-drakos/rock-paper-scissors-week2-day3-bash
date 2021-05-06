@@ -1,15 +1,7 @@
-// import functions and grab DOM elements
-
-// initialize state
-
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
 import { trackUsersWinsAndLosses } from './utils.js'; 
 
 
-//user imports
+//Caching the DOM
 const paper = document.querySelector('#paper'); 
 const rock = document.querySelector('#rock'); 
 const scissors = document.querySelector('#scissors'); 
@@ -45,21 +37,6 @@ resetButton.addEventListener('click', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // user input and storage
 const userGuessedArray = []; 
 function userGuessesFunc() {
@@ -73,8 +50,6 @@ function userGuessesFunc() {
     return userGuessedArray[userGuessedArray.length - 1]; 
 }
 
-// console.log(userGuessArray);
-// userGuessesFunc();
 
 const computerGuessedArray = []; 
 function computerGuessesFunc() {
@@ -104,7 +79,6 @@ function outputDisplay(res) {
 
 // this is the reset for the reset button and the function stays inside of the reset addEventListener
 function resetFunc() {
-
     userWinningNumberDisplay.innerHTML = 0; 
     drawOutput.innerHTML = 0;
     compWinsOutput.innerHTML = 0;

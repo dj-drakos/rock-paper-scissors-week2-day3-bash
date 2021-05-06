@@ -22,3 +22,19 @@ export function trackUsersWinsAndLosses(userGuess, computerGuess) {
         return 'computerWins'; 
     }
 }
+
+export function computerGuessesFunc(options, randomNum) {
+    if (
+        options === 'rock' && randomNum === 1 
+    ) {
+        return 'r'; 
+    } else if (
+        randomNum === 2 && options === 'paper'
+    ) {
+        return 'p'; 
+    } else if (
+        randomNum === 3 && options === 'scissors'
+    ){
+        return 's'; 
+    }
+}
