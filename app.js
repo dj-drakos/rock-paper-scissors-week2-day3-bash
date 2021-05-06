@@ -40,6 +40,7 @@ clickButton.addEventListener('click', () => {
 resetButton.addEventListener('click', () => {
     resetTimes++; 
     resetFunc(); 
+    totalResetTimes.innerHTML = resetTimes;
 });
 
 
@@ -85,7 +86,6 @@ function computerGuessesFunc() {
 
 
 function outputDisplay(res) {
-    totalResetTimes.innerHTML = resetTimes; 
     if (res === 'userWins') {
         winningTotalCounts++; 
         userWinningNumberDisplay.innerHTML = winningTotalCounts; 
@@ -104,8 +104,9 @@ function outputDisplay(res) {
 
 // this is the reset for the reset button and the function stays inside of the reset addEventListener
 function resetFunc() {
+
     userWinningNumberDisplay.innerHTML = 0; 
     drawOutput.innerHTML = 0;
     compWinsOutput.innerHTML = 0;
-    winPercentagesOutput.innerHTML = 0; 
+    winPercentagesOutput.innerHTML = 0 + '%'; 
 }
