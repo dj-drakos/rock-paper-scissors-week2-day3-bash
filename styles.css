@@ -180,17 +180,16 @@ input:checked + i{
 
 .message-container #totalResetTimes {
     position: absolute;
-    right: 350px; 
+    right: 150px; 
     top: 25px; 
     color: rgb(172, 15, 23); 
     font-size: 50px;
-   
     text-align: center;
 }
 
 .message-container #winPercentagesOutput{
     position: absolute;
-    left: 300px; 
+    left: 100px; 
     top: 25px; 
     font-size: 50px;
     color: rgb(8, 119, 153);

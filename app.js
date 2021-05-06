@@ -1,5 +1,5 @@
 import { trackUsersWinsAndLosses } from './utils.js'; 
-
+// import { computerGuessesFunc } from  './utils.js'; 
 
 //Caching the DOM
 const paper = document.querySelector('#paper'); 
@@ -36,9 +36,6 @@ resetButton.addEventListener('click', () => {
     resetFunc(); 
     totalResetTimes.innerHTML = resetTimes;
 });
-
-
-
 
 
 
