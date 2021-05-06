@@ -100,7 +100,7 @@ function resetFunc() {
     lossCounts = 0; 
     drawCounts = 0;
     gameTimes = 0; 
-    winPercentages = 0 + "%"; 
+    winPercentages = 0 + '%'; 
 
     userWinningNumberDisplay.innerHTML = winningTotalCounts; 
     drawOutput.innerHTML = drawCounts;
