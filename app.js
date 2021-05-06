@@ -11,7 +11,7 @@ const clickButton = document.querySelector('#clickBtn');
 const resetButton = document.querySelector('#resetBtn'); 
 
 //display HTML elements 
-const messageDisplay = document.querySelector('#messageDisplay'); 
+// const messageDisplay = document.querySelector('#messageDisplay'); 
 const userWinningNumberDisplay = document.querySelector('#userWinsOutput'); 
 const drawOutput = document.querySelector('#drawOutput'); 
 const compWinsOutput = document.querySelector('#compWinsOutput'); 
@@ -100,7 +100,7 @@ function resetFunc() {
     lossCounts = 0; 
     drawCounts = 0;
     gameTimes = 0; 
-    winPercentages = 0; 
+    winPercentages = 0 + "%"; 
 
     userWinningNumberDisplay.innerHTML = winningTotalCounts; 
     drawOutput.innerHTML = drawCounts;

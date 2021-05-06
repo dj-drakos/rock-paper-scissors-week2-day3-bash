@@ -184,6 +184,8 @@ input:checked + i{
     top: 25px; 
     color: rgb(172, 15, 23); 
     font-size: 50px;
+   
+    text-align: center;
 }
 
 .message-container #winPercentagesOutput{
@@ -191,7 +193,8 @@ input:checked + i{
     left: 300px; 
     top: 25px; 
     font-size: 50px;
-    color: rgb(8, 119, 153); 
+    color: rgb(8, 119, 153);
+    text-align: center;
 }
 
 
