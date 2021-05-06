@@ -25,22 +25,17 @@ const compWinsOutput = document.querySelector('#compWinsOutput');
 const winPercentagesOutput = document.querySelector('#winPercentagesOutput'); 
 const totalResetTimes = document.querySelector('#totalResetTimes'); 
 
-
-// console.log(paper);
-
 let winningTotalCounts = 0; 
 let lossCounts = 0; 
 let drawCounts = 0;
 let gameTimes = 0; 
 let resetTimes = 0; 
 
-
 clickButton.addEventListener('click', () => {
     gameTimes++; 
     const result = trackUsersWinsAndLosses(userGuessesFunc(), computerGuessesFunc()); 
     outputDisplay(result); 
 });
-
 
 resetButton.addEventListener('click', () => {
     resetTimes++; 
@@ -111,13 +106,8 @@ function outputDisplay(res) {
 // this is the reset for the reset button and the function stays inside of the reset addEventListener
 function resetFunc() {
    
-    let winningTotalCounts = 0; 
-    let lossCounts = 0; 
-    let drawCounts = 0;
-    let gameTimes = 0; 
-
-    userWinningNumberDisplay.innerHTML = ''; 
-    drawOutput.innerHTML = '';
-    compWinsOutput.innerHTML = '';
-    winPercentagesOutput.innerHTML = ''; 
+    userWinningNumberDisplay.innerHTML = 0; 
+    drawOutput.innerHTML = 0;
+    compWinsOutput.innerHTML = 0;
+    winPercentagesOutput.innerHTML = 0; 
 }
