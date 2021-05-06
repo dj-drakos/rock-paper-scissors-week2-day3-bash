@@ -37,6 +37,15 @@ resetButton.addEventListener('click', () => {
 
 
 
+
+
+
+
+
+
+
+
+
 // user input and storage
 const userGuessedArray = []; 
 function userGuessesFunc() {
