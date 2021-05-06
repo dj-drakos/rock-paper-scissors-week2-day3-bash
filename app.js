@@ -11,6 +11,7 @@ const clickButton = document.querySelector('#clickBtn');
 const resetButton = document.querySelector('#resetBtn'); 
 
 //display HTML elements 
+const messageDisplay = document.querySelector('#messageDisplay'); 
 const userWinningNumberDisplay = document.querySelector('#userWinsOutput'); 
 const drawOutput = document.querySelector('#drawOutput'); 
 const compWinsOutput = document.querySelector('#compWinsOutput'); 
@@ -21,6 +22,7 @@ let winningTotalCounts = 0;
 let lossCounts = 0; 
 let drawCounts = 0;
 let gameTimes = 0; 
+let winPercentages = 0; 
 let resetTimes = 0; 
 
 clickButton.addEventListener('click', () => {
@@ -34,7 +36,6 @@ resetButton.addEventListener('click', () => {
     resetFunc(); 
     totalResetTimes.innerHTML = resetTimes;
 });
-
 
 
 
@@ -73,6 +74,8 @@ function outputDisplay(res) {
     if (res === 'userWins') {
         winningTotalCounts++; 
         userWinningNumberDisplay.innerHTML = winningTotalCounts; 
+
+        // winIcon(); 
     } else if (res === 'draw') {
         drawCounts++; 
         drawOutput.innerHTML = drawCounts;
@@ -81,15 +84,26 @@ function outputDisplay(res) {
         compWinsOutput.innerHTML = lossCounts;
     }
     winPercentagesOutput.innerHTML = `${Math.floor(winningTotalCounts / gameTimes * 100)} %`;
-   
 }
 
+// function winIcon() {
+//     const pTag = document.createElement('p'); 
+//     // eslint-disable-next-line no-undef
+//     pTag.innerHTML = "<i class='fas fa-trophy'></i>"; 
+//     winningTotalCounts.appendChild(pTag);
+// }
 
 
 // this is the reset for the reset button and the function stays inside of the reset addEventListener
 function resetFunc() {
-    userWinningNumberDisplay.innerHTML = 0; 
-    drawOutput.innerHTML = 0;
-    compWinsOutput.innerHTML = 0;
-    winPercentagesOutput.innerHTML = 0 + '%'; 
+    winningTotalCounts = 0; 
+    lossCounts = 0; 
+    drawCounts = 0;
+    gameTimes = 0; 
+    winPercentages = 0; 
+
+    userWinningNumberDisplay.innerHTML = winningTotalCounts; 
+    drawOutput.innerHTML = drawCounts;
+    compWinsOutput.innerHTML = lossCounts;
+    winPercentagesOutput.innerHTML = winPercentages;
 }

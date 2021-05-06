@@ -121,7 +121,7 @@ input:checked + i{
 
 #userWinsOutput {
     position: absolute;
-    top: 25px; 
+    top: 0px; 
     left: -30px;
     font-size: 35px; 
     color: rgb(11, 11, 235); 
