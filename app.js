@@ -20,6 +20,10 @@ const resetButton = document.querySelector('#resetBtn');
 
 //display HTML elements 
 const userWinningNumberDisplay = document.querySelector('#userWinsOutput'); 
+const drawOutput = document.querySelector('#drawOutput'); 
+const compWinsOutput = document.querySelector('#compWinsOutput'); 
+const winPercentagesOutput = document.querySelector('#winPercentagesOutput'); 
+
 
 // console.log(paper);
 
@@ -27,6 +31,47 @@ let winningTotalCounts  = 0;
 let lossCounts = 0; 
 let drawCounts = 0;
 let gameTimes = 0; 
+
+
+clickButton.addEventListener('click', () => {
+    gameTimes++; 
+    const result = trackUsersWinsAndLosses(userGuessesFunc(), computerGuessesFunc()); 
+    outputDisplay(result); 
+});
+
+
+resetButton.addEventListener('click', () => {
+    resetFunc(); 
+
+});
+
+
+function resetFunc() {
+    let winningTotalCounts = 0; 
+    let lossCounts = 0; 
+    let drawCounts = 0;
+    let gameTimes = 0; 
+
+    userWinningNumberDisplay.innerHTML = ''; 
+    drawOutput.innerHTML = '';
+    compWinsOutput.innerHTML = '';
+    winPercentagesOutput.innerHTML = ''; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // user input and storage
 const userGuessedArray = []; 
@@ -52,7 +97,21 @@ function computerGuessesFunc() {
     return computerGuessedArray[computerGuessedArray.length - 1]; 
 }
 
-clickButton.addEventListener('click', () => {
-    const result = trackUsersWinsAndLosses(userGuessesFunc(), computerGuessesFunc()); 
-    console.log(result)
-});
+
+
+function outputDisplay(res) {
+    if (res === 'userWins') {
+        winningTotalCounts++; 
+        userWinningNumberDisplay.innerHTML = winningTotalCounts; 
+    } else if (res === 'draw') {
+        drawCounts++; 
+        drawOutput.innerHTML = drawCounts;
+    } else {
+        lossCounts++; 
+        compWinsOutput.innerHTML = lossCounts;
+    }
+    winPercentagesOutput.innerHTML = `${Math.floor(winningTotalCounts / gameTimes * 100)} %`;
+}
+
+
+
