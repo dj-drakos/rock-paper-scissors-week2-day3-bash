@@ -19,6 +19,7 @@ const winPercentagesOutput = document.querySelector('#winPercentagesOutput');
 const totalResetTimes = document.querySelector('#totalResetTimes'); 
 
 //initializing variable states
+
 let winningTotalCounts = 0; 
 let lossCounts = 0; 
 let drawCounts = 0;
@@ -43,8 +44,6 @@ resetButton.addEventListener('click', () => {
 
 
 
-
-
 // user input and storage
 const userGuessedArray = []; 
 function userGuessesFunc() {
@@ -58,7 +57,6 @@ function userGuessesFunc() {
 //    return userGuessedArray[userGuessedArray.length - 1];
 //    refactored return value to not increase array length
     return userGuessedArray.shift();
-    
 }
 
 
