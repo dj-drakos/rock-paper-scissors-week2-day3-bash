@@ -11,13 +11,14 @@ const clickButton = document.querySelector('#clickBtn');
 const resetButton = document.querySelector('#resetBtn'); 
 
 //display HTML elements 
-// const messageDisplay = document.querySelector('#messageDisplay'); 
+//const messageDisplay = document.querySelector('#messageDisplay'); 
 const userWinningNumberDisplay = document.querySelector('#userWinsOutput'); 
 const drawOutput = document.querySelector('#drawOutput'); 
 const compWinsOutput = document.querySelector('#compWinsOutput'); 
 const winPercentagesOutput = document.querySelector('#winPercentagesOutput'); 
 const totalResetTimes = document.querySelector('#totalResetTimes'); 
 
+//initializing variable states
 let winningTotalCounts = 0; 
 let lossCounts = 0; 
 let drawCounts = 0;
@@ -28,7 +29,7 @@ let resetTimes = 0;
 clickButton.addEventListener('click', () => {
     gameTimes++; 
     const result = trackUsersWinsAndLosses(userGuessesFunc(), computerGuessesFunc()); 
-    outputDisplay(result); 
+    outputDisplay(result);
 });
 
 resetButton.addEventListener('click', () => {
@@ -54,7 +55,10 @@ function userGuessesFunc() {
     } else {
         userGuessedArray.push(scissors.value);
     }
-    return userGuessedArray[userGuessedArray.length - 1]; 
+//    return userGuessedArray[userGuessedArray.length - 1];
+//    refactored return value to not increase array length
+    return userGuessedArray.shift();
+    
 }
 
 
@@ -63,7 +67,9 @@ function computerGuessesFunc() {
     const options = ['rock', 'paper', 'scissors'];  
     const randomNum = Math.floor(Math.random() * 3) ; 
     computerGuessedArray.push(options[randomNum]); 
-    return computerGuessedArray[computerGuessedArray.length - 1]; 
+//    return computerGuessedArray[userGuessedArray.length - 1];
+//    refactored return value to not increase array length
+    return computerGuessedArray.shift();
 }
 
 
@@ -71,7 +77,6 @@ function outputDisplay(res) {
     if (res === 'userWins') {
         winningTotalCounts++; 
         userWinningNumberDisplay.innerHTML = winningTotalCounts; 
-
         // winIcon(); 
     } else if (res === 'draw') {
         drawCounts++; 
