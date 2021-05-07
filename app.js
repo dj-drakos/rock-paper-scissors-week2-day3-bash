@@ -18,6 +18,7 @@ const compWinsOutput = document.querySelector('#compWinsOutput');
 const winPercentagesOutput = document.querySelector('#winPercentagesOutput'); 
 const totalResetTimes = document.querySelector('#totalResetTimes'); 
 
+
 let winningTotalCounts = 0; 
 let lossCounts = 0; 
 let drawCounts = 0;
@@ -54,7 +55,8 @@ function userGuessesFunc() {
     } else {
         userGuessedArray.push(scissors.value);
     }
-    return userGuessedArray[userGuessedArray.length - 1]; 
+    // return userGuessedArray[userGuessedArray.length - 1]; 
+    return userGuessedArray.shift(); 
 }
 
 
@@ -63,7 +65,8 @@ function computerGuessesFunc() {
     const options = ['rock', 'paper', 'scissors'];  
     const randomNum = Math.floor(Math.random() * 3) ; 
     computerGuessedArray.push(options[randomNum]); 
-    return computerGuessedArray[computerGuessedArray.length - 1]; 
+    return computerGuessedArray.shift(); 
+    // return computerGuessedArray[computerGuessedArray.length - 1]; 
 }
 
 
